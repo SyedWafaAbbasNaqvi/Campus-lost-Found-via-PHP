@@ -1,0 +1,325 @@
+# Campus Lost & Found Portal - Project Checklist
+
+## ✅ Pre-Submission Checklist
+
+### 1. Code Completion
+- [ ] All PHP files are created and working
+- [ ] Database schema is complete and imported
+- [ ] All CRUD operations are functional
+- [ ] User authentication works (login/register/logout)
+- [ ] Image upload functionality works
+- [ ] Search and filter features work
+- [ ] Admin panel is accessible and functional
+- [ ] All forms have proper validation
+- [ ] Error handling is implemented
+- [ ] Code is properly commented
+
+### 2. Personalization (CRITICAL!)
+- [ ] Updated `footer.php` with real group member names and IDs
+- [ ] Updated `contact.php` with real information
+- [ ] Updated `README.md` with group details
+- [ ] Changed demo credentials to your own (optional)
+- [ ] Added your university/college name
+- [ ] Added instructor name in documentation
+
+### 3. Database
+- [ ] Database is created: `lost_and_found`
+- [ ] Users table has sample data
+- [ ] Items table has sample data
+- [ ] Relationships are properly set up
+- [ ] Database export file (`database.sql`) is included
+- [ ] Database credentials in `config.php` are correct
+
+### 4. File Structure
+- [ ] All files are in correct folders
+- [ ] `uploads/` folder exists and has write permissions
+- [ ] `uploads/default.jpg` exists
+- [ ] `uploads/.htaccess` is in place
+- [ ] CSS file is properly linked
+- [ ] JavaScript file is properly linked
+- [ ] No missing files
+
+### 5. Testing - CRUD Operations
+#### CREATE (Post New Item)
+- [ ] Can register new user
+- [ ] Can post lost item with all details
+- [ ] Can post found item with all details
+- [ ] Can upload image with item
+- [ ] Form validation works
+- [ ] Success message appears
+- [ ] Redirects to correct page
+
+#### READ (View Items)
+- [ ] Home page shows all items
+- [ ] Can view individual item details
+- [ ] Search functionality works
+- [ ] Filter by type (lost/found) works
+- [ ] Filter by category works
+- [ ] Statistics display correctly
+- [ ] Images load properly
+- [ ] Contact info shows only when logged in
+
+#### UPDATE (Edit Items)
+- [ ] Can edit own items
+- [ ] Can change all item fields
+- [ ] Can upload new image
+- [ ] Can mark item as returned
+- [ ] Changes save correctly
+- [ ] Can update user profile
+- [ ] Only owner can edit their items
+
+#### DELETE (Remove Items)
+- [ ] Can delete own items
+- [ ] Confirmation dialog appears
+- [ ] Item is removed from database
+- [ ] Image file is deleted
+- [ ] Redirects properly after deletion
+- [ ] Admin can delete any item
+
+### 6. User Features
+- [ ] Registration form works and validates
+- [ ] Login form works
+- [ ] Logout works
+- [ ] User dashboard shows their items
+- [ ] User can see their statistics
+- [ ] Password is properly hashed
+- [ ] Session management works
+- [ ] User can access only their own items for editing
+
+### 7. Admin Features
+- [ ] Admin account exists and works
+- [ ] Admin dashboard is accessible
+- [ ] Admin can view all items
+- [ ] Admin can delete any item
+- [ ] Admin can view all users
+- [ ] Statistics show correctly
+- [ ] Non-admin users cannot access admin panel
+
+### 8. Design & UI
+- [ ] Website is visually appealing
+- [ ] Navigation menu works on all pages
+- [ ] Forms are well-designed and user-friendly
+- [ ] Buttons and links have hover effects
+- [ ] Colors are consistent throughout
+- [ ] Layout is responsive (works on mobile)
+- [ ] No broken images
+- [ ] Footer displays on all pages
+- [ ] Loading states are handled
+
+### 9. Security
+- [ ] Passwords are hashed (not plain text)
+- [ ] SQL injection prevention is implemented
+- [ ] XSS protection is in place
+- [ ] File upload has proper validation
+- [ ] Sessions are properly managed
+- [ ] Only logged-in users can post items
+- [ ] Users can only edit/delete their own items
+- [ ] Admin privileges are checked
+
+### 10. Live Deployment
+- [ ] Website is deployed on live hosting
+- [ ] Live URL is accessible from anywhere
+- [ ] Database is set up on live server
+- [ ] All files are uploaded correctly
+- [ ] `config.php` has correct live database credentials
+- [ ] BASE_URL in `config.php` points to live domain
+- [ ] Uploads folder has correct permissions
+- [ ] All features work on live site
+- [ ] Tested from different devices/browsers
+
+### 11. Documentation
+#### README.md
+- [ ] Contains group member names and IDs
+- [ ] Has project overview
+- [ ] Lists all features
+- [ ] Includes technology stack
+- [ ] Has installation instructions
+- [ ] Includes demo credentials
+- [ ] Has project structure
+- [ ] Includes troubleshooting section
+
+#### Project Report
+- [ ] Title page with all details
+- [ ] Introduction section complete
+- [ ] Technology stack explained
+- [ ] System features described
+- [ ] Database design documented
+- [ ] Implementation explained
+- [ ] Screenshots included (minimum 8-10):
+  - [ ] Home page
+  - [ ] Registration page
+  - [ ] Login page
+  - [ ] Post item page
+  - [ ] View item details
+  - [ ] Edit item page
+  - [ ] User dashboard
+  - [ ] Admin dashboard
+  - [ ] Database structure (phpMyAdmin)
+  - [ ] Search/filter in action
+- [ ] Conclusion written
+- [ ] Proper formatting throughout
+
+### 12. GitHub Repository
+- [ ] Repository is created and public
+- [ ] All files are committed
+- [ ] README.md is in root
+- [ ] Commit messages are meaningful
+- [ ] `.gitignore` includes uploads folder (optional)
+- [ ] Repository link is included in submission
+
+### 13. Presentation Materials
+- [ ] Presentation slides created (5-6 slides)
+- [ ] Slide 1: Title page with group members
+- [ ] Slide 2: Project overview and objectives
+- [ ] Slide 3: Key features and CRUD operations
+- [ ] Slide 4: Technology stack and architecture
+- [ ] Slide 5: Live demo (screenshots)
+- [ ] Slide 6: Team contributions and conclusion
+- [ ] Slides are visually appealing
+- [ ] Presenter notes added (if needed)
+- [ ] Time limit is 5 minutes
+
+### 14. Final Checks Before Submission
+- [ ] Tested on Chrome browser
+- [ ] Tested on Firefox (if possible)
+- [ ] Tested login/logout multiple times
+- [ ] Tested all CRUD operations
+- [ ] Checked for any PHP errors
+- [ ] Checked for any JavaScript errors (F12 console)
+- [ ] Verified all links work
+- [ ] Verified all images load
+- [ ] Checked mobile responsiveness
+- [ ] Live website link is accessible
+- [ ] GitHub repository link works
+- [ ] All submission files are ready:
+  - [ ] Live website link
+  - [ ] GitHub repository link
+  - [ ] Project report PDF
+  - [ ] Presentation slides
+
+### 15. Submission Package
+Create a folder named: `CSC337_Assignment4_[YourGroupNumber]`
+
+Include:
+- [ ] `README.md` - Setup instructions
+- [ ] `PROJECT_REPORT.pdf` - Complete report
+- [ ] `PRESENTATION.pptx` - Presentation slides
+- [ ] `LINKS.txt` - Contains:
+  - Live website URL
+  - GitHub repository URL
+  - Demo login credentials
+- [ ] `database.sql` - Database backup
+- [ ] `screenshots/` folder - All screenshots
+
+---
+
+## 🎯 Day Before Submission Checklist
+
+- [ ] Test website one final time
+- [ ] Verify live link works from different location
+- [ ] Take fresh screenshots
+- [ ] Print report draft for review
+- [ ] Practice presentation (time yourself - 5 min)
+- [ ] Prepare for possible questions
+- [ ] Have backup of all files
+- [ ] Charge your laptop
+
+---
+
+## 📊 Presentation Day Checklist
+
+- [ ] Laptop is charged
+- [ ] Internet connection is available
+- [ ] Live website is up and running
+- [ ] Demo accounts are working
+- [ ] Presentation slides are ready
+- [ ] All team members know their parts
+- [ ] Backup plan if internet fails (localhost demo)
+- [ ] Be ready to answer questions
+
+---
+
+## 🎨 Optional Enhancements (Bonus Points)
+
+If you have extra time, consider adding:
+- [ ] Email notifications when item is posted
+- [ ] QR code generation for items
+- [ ] Export items to PDF
+- [ ] Image gallery for multiple images per item
+- [ ] Comments/messages on items
+- [ ] User ratings/reviews
+- [ ] Advanced search with date range
+- [ ] Statistics graphs/charts
+- [ ] Dark mode toggle
+- [ ] Forgot password feature
+
+---
+
+## ⚠️ Common Mistakes to Avoid
+
+- ❌ Not updating group member names in footer
+- ❌ Submitting with "localhost" URLs
+- ❌ Database credentials in GitHub (use config template)
+- ❌ Forgetting to test on live server
+- ❌ Missing uploads folder or default.jpg
+- ❌ Not testing all CRUD operations
+- ❌ Incomplete documentation
+- ❌ Plagiarized code without attribution
+- ❌ Exceeding 5-minute presentation time
+- ❌ Not testing with different user accounts
+
+---
+
+## 📝 Team Member Task Distribution
+
+Track who did what:
+
+**Member 1**: ___________________
+- Tasks: Database design, config setup
+- Files: config.php, database.sql
+
+**Member 2**: ___________________
+- Tasks: User authentication
+- Files: login.php, register.php, logout.php
+
+**Member 3**: ___________________
+- Tasks: Item CRUD operations
+- Files: post_item.php, edit_item.php, delete_item.php
+
+**Member 4**: ___________________
+- Tasks: Frontend design
+- Files: style.css, header.php, footer.php
+
+**Member 5**: ___________________
+- Tasks: Testing and documentation
+- Files: README.md, PROJECT_REPORT.pdf
+
+---
+
+## 🎉 Final Sign-off
+
+Date: _______________
+
+✅ All checklist items completed
+✅ Website is live and tested
+✅ All documentation is ready
+✅ GitHub repository is updated
+✅ Presentation is prepared
+✅ Team is ready for demo
+
+**Team Lead Signature**: ___________________
+
+**Ready for Submission!** 🚀
+
+---
+
+## 📞 Last Minute Help
+
+If something goes wrong:
+1. Don't panic!
+2. Check SETUP_GUIDE.txt troubleshooting section
+3. Contact team members
+4. Have backup localhost demo ready
+5. Be honest with instructor if issues arise
+
+**Good luck! You've got this! 💪**

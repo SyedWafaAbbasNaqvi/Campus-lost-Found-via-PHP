@@ -1,0 +1,373 @@
+===============================================================
+CAMPUS LOST & FOUND PORTAL - COMPLETE SETUP GUIDE
+CSC 337 - Web Programming Languages
+===============================================================
+
+📋 TABLE OF CONTENTS
+1. System Requirements
+2. Local Development Setup (XAMPP)
+3. Project Installation
+4. Database Configuration
+5. Testing Locally
+6. Live Deployment Steps
+7. Troubleshooting
+
+===============================================================
+1. SYSTEM REQUIREMENTS
+===============================================================
+
+✓ PHP 7.4 or higher
+✓ MySQL 5.7 or higher
+✓ Apache Web Server
+✓ Modern web browser
+✓ 100MB free disk space
+
+===============================================================
+2. LOCAL DEVELOPMENT SETUP (XAMPP)
+===============================================================
+
+Step 1: Download and Install XAMPP
+- Visit: https://www.apachefriends.org
+- Download XAMPP for your OS (Windows/Mac/Linux)
+- Install XAMPP to default location:
+  Windows: C:\xampp
+  Mac: /Applications/XAMPP
+  Linux: /opt/lampp
+
+Step 2: Start Services
+- Open XAMPP Control Panel
+- Start "Apache" service
+- Start "MySQL" service
+- Both should show green "Running" status
+
+===============================================================
+3. PROJECT INSTALLATION
+===============================================================
+
+Step 1: Copy Project Files
+- Navigate to XAMPP's htdocs folder:
+  Windows: C:\xampp\htdocs\
+  Mac: /Applications/XAMPP/htdocs/
+  Linux: /opt/lampp/htdocs/
+
+- Create folder: campus-lost-found
+- Copy ALL project files into this folder
+
+Step 2: Create Uploads Folder
+- Inside campus-lost-found folder, create: uploads/
+- Windows: Right-click → Properties → Security → Edit → Add write permissions
+- Mac/Linux: Open terminal and run:
+  chmod 777 uploads/
+
+Step 3: Add Default Image (IMPORTANT)
+- Create or download a default image
+- Save it as: uploads/default.jpg
+- This is used when no image is uploaded
+- Recommended size: 800x600 pixels
+
+===============================================================
+4. DATABASE CONFIGURATION
+===============================================================
+
+Step 1: Create Database
+- Open browser: http://localhost/phpmyadmin
+- Click "New" in left sidebar
+- Database name: lost_and_found
+- Collation: utf8_general_ci
+- Click "Create"
+
+Step 2: Import Database
+- Select "lost_and_found" database
+- Click "Import" tab
+- Click "Choose File"
+- Select: database.sql from project folder
+- Click "Go" at bottom
+- Wait for "Import has been successfully finished"
+
+Step 3: Verify Tables
+- Click "lost_and_found" in left sidebar
+- You should see 2 tables:
+  ✓ users (with sample users)
+  ✓ items (with sample items)
+
+Step 4: Configure Connection
+- Open: config.php in text editor
+- Verify these settings:
+
+  define('DB_HOST', 'localhost');
+  define('DB_USER', 'root');
+  define('DB_PASS', '');  // Empty for XAMPP default
+  define('DB_NAME', 'lost_and_found');
+  define('BASE_URL', 'http://localhost/campus-lost-found/');
+
+- Save the file
+
+===============================================================
+5. TESTING LOCALLY
+===============================================================
+
+Step 1: Access the Website
+- Open browser
+- Go to: http://localhost/campus-lost-found/
+- You should see the home page with sample items
+
+Step 2: Test User Login
+Option A - Regular User:
+  Email: john@campus.edu
+  Password: user123
+
+Option B - Admin User:
+  Email: admin@campus.edu
+  Password: admin123
+
+Step 3: Test CRUD Operations
+
+CREATE (Post Item):
+- Login with any account
+- Click "Post Item" in navigation
+- Fill all required fields
+- Upload an image (optional)
+- Click "Post Item"
+- Should redirect to dashboard with success message
+
+READ (View Items):
+- Go to home page
+- Browse all items
+- Use search box to search
+- Use filters (Lost/Found/Category)
+- Click "View Details" on any item
+
+UPDATE (Edit Item):
+- Login as the user who posted the item
+- Go to Dashboard
+- Click edit icon (✏️) on any item
+- Modify details
+- Click "Update Item"
+- Changes should be visible
+
+DELETE (Remove Item):
+- Login as the user who posted the item
+- Go to Dashboard
+- Click delete icon (🗑️) on any item
+- Confirm deletion
+- Item should be removed
+
+Step 4: Test Admin Features
+- Login as admin (admin@campus.edu / admin123)
+- Click "Admin" in navigation
+- View statistics dashboard
+- Manage all items
+- View all users
+
+===============================================================
+6. LIVE DEPLOYMENT STEPS
+===============================================================
+
+RECOMMENDED FREE HOSTING:
+- InfinityFree: https://infinityfree.net
+- 000webhost: https://000webhost.com
+- Awardspace: https://awardspace.com
+
+Step 1: Sign Up for Hosting
+- Choose a hosting provider
+- Sign up for free account
+- Verify your email
+- Login to control panel
+
+Step 2: Create Database
+- Go to MySQL Databases section
+- Create new database
+- Note down:
+  * Database name
+  * Database username
+  * Database password
+  * Database host (usually localhost)
+
+Step 3: Import Database
+- Open phpMyAdmin from hosting control panel
+- Select your database
+- Click Import
+- Upload database.sql
+- Execute
+
+Step 4: Upload Files
+Option A - FTP (Recommended):
+  - Download FileZilla: https://filezilla-project.org
+  - Get FTP credentials from hosting control panel
+  - Connect to your hosting
+  - Upload ALL files to public_html or htdocs folder
+
+Option B - File Manager:
+  - Use hosting's File Manager
+  - Upload files manually
+  - Or upload as ZIP and extract
+
+Step 5: Update Configuration
+- Using File Manager or FTP, edit config.php
+- Update database details:
+
+  define('DB_HOST', 'your-host');        // From hosting
+  define('DB_USER', 'your-db-username'); // From hosting
+  define('DB_PASS', 'your-db-password'); // From hosting
+  define('DB_NAME', 'your-db-name');     // From hosting
+  define('BASE_URL', 'https://yourdomain.com/');
+
+- Save changes
+
+Step 6: Set Permissions
+- Set uploads folder permissions to 755 or 777
+- Using File Manager: Right-click folder → Change Permissions
+- Via FTP: Right-click folder → File Permissions → 755
+
+Step 7: Test Live Website
+- Visit your domain
+- Test all features:
+  ✓ Registration works
+  ✓ Login works
+  ✓ Post item works
+  ✓ View items works
+  ✓ Edit works
+  ✓ Delete works
+  ✓ Images upload correctly
+
+===============================================================
+7. TROUBLESHOOTING
+===============================================================
+
+Problem: "Connection failed" error
+Solution:
+- Check if MySQL is running in XAMPP
+- Verify database name in config.php
+- Verify username/password in config.php
+- Make sure database is imported
+
+Problem: "Access Denied" for database
+Solution:
+- In phpMyAdmin, check user privileges
+- Go to User Accounts → root
+- Make sure "localhost" has all privileges
+- Or create new user with all privileges
+
+Problem: Pages show blank/white screen
+Solution:
+- Enable error reporting temporarily
+- Add to top of config.php:
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+- Reload page to see actual error
+- Fix the error
+- Remove error reporting lines
+
+Problem: Images not uploading
+Solution:
+- Check if uploads folder exists
+- Check folder permissions (777)
+- Check file size (max 5MB in post_item.php)
+- Check file extension (only jpg, jpeg, png, gif)
+- Add default.jpg in uploads folder
+
+Problem: Login/Register not working
+Solution:
+- Check if users table has data
+- Verify password is being hashed
+- Clear browser cookies/cache
+- Check session is started in config.php
+- Verify form action points to correct file
+
+Problem: Navigation links broken
+Solution:
+- Check BASE_URL in config.php
+- Make sure it ends with /
+- Verify folder name matches URL
+- Check file names are correct (case-sensitive)
+
+Problem: 404 Page Not Found
+Solution:
+- Verify folder structure is correct
+- Check all files are uploaded
+- Make sure .php extension is in filename
+- Verify file paths in includes
+
+Problem: CSS not loading
+Solution:
+- Check css/style.css file exists
+- Verify BASE_URL in header.php
+- Clear browser cache (Ctrl+F5)
+- Check file permissions
+
+Problem: Admin panel not accessible
+Solution:
+- Login with admin credentials
+- Check user role in database (should be 'admin')
+- Verify isAdmin() function in config.php
+- Check admin folder exists
+
+===============================================================
+IMPORTANT REMINDERS
+===============================================================
+
+Before Submission:
+✓ Update footer.php with REAL names and IDs
+✓ Update contact.php with REAL information
+✓ Update README.md with your details
+✓ Test ALL features work correctly
+✓ Take screenshots for report
+✓ Ensure website is live and accessible
+✓ Commit code to GitHub with proper README
+✓ Test from different devices/browsers
+
+For Presentation:
+✓ Prepare 5-minute demo
+✓ Show live website running
+✓ Demonstrate all CRUD operations
+✓ Explain your technology choices
+✓ Show database structure
+✓ Explain team member contributions
+
+===============================================================
+DEMO FLOW (5 MINUTES)
+===============================================================
+
+1. Introduction (30 sec)
+   - Project name and purpose
+   - Team members introduction
+
+2. Live Website Demo (2 min)
+   - Show home page
+   - Register new user
+   - Login
+   - Post a lost item (CREATE)
+   - Browse items (READ)
+   - Search and filter
+   - Edit item (UPDATE)
+   - Mark as returned (UPDATE)
+   - Delete item (DELETE)
+
+3. Admin Features (1 min)
+   - Login as admin
+   - Show admin dashboard
+   - Show statistics
+   - Show user management
+
+4. Technical Overview (1 min)
+   - Show database in phpMyAdmin
+   - Briefly show code structure
+   - Mention technologies used
+
+5. Q&A (30 sec)
+   - Answer teacher's questions
+
+===============================================================
+CONTACT FOR HELP
+===============================================================
+
+If you encounter issues:
+1. Check this guide thoroughly
+2. Search the error message online
+3. Check PHP/MySQL documentation
+4. Ask team members
+5. Consult with teacher during office hours
+
+===============================================================
+GOOD LUCK WITH YOUR PROJECT! 🚀
+===============================================================
